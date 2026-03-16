@@ -6,7 +6,10 @@
 
 import numpy as np
 import numpy.linalg as linalg
-from skimage.measure import compare_ssim as SSIM
+try:
+    from skimage.metrics import structural_similarity as SSIM
+except ImportError:
+    from skimage.measure import compare_ssim as SSIM
 
 ##############################################
 '''
